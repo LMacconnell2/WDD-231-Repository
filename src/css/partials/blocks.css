@@ -1,0 +1,19 @@
+.intro {
+    margin: 25px;
+  }
+  
+  .info-card > img {
+    width: 100%;
+  }
+  
+  .info-card {
+    max-width: 300px;
+    margin: 0px;
+  }
+  
+  .info-cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    margin-top: 50px;
+  }
