@@ -1,0 +1,9 @@
+.conditions-container {
+    margin: 25px;
+}
+.conditions-details {
+    border: 1px solid gray;
+    height: 50px;
+    padding: 10px;
+    text-justify: center;
+}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yellowstone National Park</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/conditions.js"></script>
   </head>
   <body>
     <p class="disclaimer">
@@ -69,7 +69,8 @@
                 <a href="#">Plan Your Visit</a>
                 <button class="global-nav__split-button__toggle">
                   <span class="visually-hidden"
-                    >Toggle submenu for Plan Your Visit</span>
+                    >Toggle submenu for Plan Your Visit</span
+                  >
                   <svg class="icon" role="presentation" focusable="false">
                     <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
                   </svg>
@@ -124,13 +125,29 @@
         </nav>
       </section>
     </header>
-    <main id="main">
-      <section class="intro">
-        <h1 class="intro-title"></h1>
-        <p class="intro-desc"></p>
-        <section class="info-cards">
+    <main>
+      <section class="conditions-container">
+        <h1 class="cond-title">Current Conditions</h1>
+        <h2 class="cond-info">Alerts</h2>
+        <section class="alert-card">
+            <!-- <svg class="alert-icon">
+                <use xlink:href="/images/sprite.symbol.svg#info"></use>
+            </svg> -->
+            <h3 class="alert-title"></h3>
+            <p class="alert-desc"></p>
         </section>
-      <section class="info"></section>
+        <h2>Visitor Services</h2>
+        <details class="conditions-details" name="cond-details">
+            <summary>Visitor Centers</summary>
+            <ul></ul>
+        </details>
+        <h2>Activites</h2>
+        <details class="conditions-details" name="cond-details">
+            <summary>All Activities</summary>
+            <ul>
+            </ul>
+        </details>
+      </section>
     </main>
     <footer id="park-footer">
       <h3>Contact Info</h3>

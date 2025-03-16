@@ -9,7 +9,7 @@ export async function getParkData() {
     }
   };
   let data = {};
-const response = await fetch(baseUrl + "parks" + "?parkCode=yell", options);
+const response = await fetch(baseUrl + "parks" + `?parkCode=yell`, options);
 
 // Check to make sure the response was ok
 if (response.ok) {
@@ -21,6 +21,28 @@ if (response.ok) {
 
 return data.data[0];
 
+}
+//https://developer.nps.gov/api/v1/alerts?parkCode=yell
+export async function getAlertData() {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  }; 
+  let alertData = {};
+  const response = await fetch(baseUrl + "alerts" + `?parkCode=yell`, options);
+
+// Check to make sure the response was ok
+if (response.ok) {
+  // Convert to JSON
+  alertData = await response.json();
+} else {
+  throw new Error("Response not ok");
+}
+
+console.log(alertData.data[0]);
+return alertData.data[0];
 }
 
 export async function getInfoLinks(parkData) {
