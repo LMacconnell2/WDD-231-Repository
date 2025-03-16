@@ -6,8 +6,9 @@ async function init() {
 
   const parkData = await getParkData();
   const alertData = await getAlertData();
-  setHeaderInfo(parkData)
-  footerTemplate(parkData)
+  setHeaderInfo(parkData);
+  footerTemplate(parkData);
+  setAlert(alertData);
 }
 init();
 
@@ -60,11 +61,24 @@ function setHeaderInfo(parkData) {
       <p>${voice}</p>`
   }
 
-  function setAlert(alertData) {
-    const alertTitle = alertData.title;
-    const alertDesc = alertData.description;
-    const alertTitleContainer = document.querySelector(".alert-title");
-    const alertDescContainer = document.querySelector(".alert-desc");
-    alertTitleContainer.innerHTML = alertTitle;
-    alertDescContainer.innerHTML = alertDesc;
+  function setAlert(alertData) {  
+    const alertsContainer = document.querySelector(".alerts > ul");
+    alertsContainer.innerHTML = "";
+
+    const alertDataObject = [alertData]
+  
+    const alertsHTML = alertDataObject.map((alert) => {
+      let alertType = alert.category === "Park Closure" ? "closure" : "other";
+      return `<li class="alert">
+        <svg class="icon" focusable="false" aria-hidden="true">
+          <use xlink:href="/images/sprite.symbol.svg#alert-${alertType}"></use>
+        </svg>
+        <div>
+          <h3 class="alert-${alertType}">${alert.title}</h3>
+          <p>${alert.description}</p>
+        </div>
+      </li>`;
+    });
+  
+    alertsContainer.insertAdjacentHTML("beforeend", alertsHTML.join(""));
   }
