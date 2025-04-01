@@ -31,6 +31,7 @@ header {
     border-radius: 10px;
     margin-right: 50px;
   }
+
   
   #global-nav-toggle > .icon {
     fill: var(--bs-black);

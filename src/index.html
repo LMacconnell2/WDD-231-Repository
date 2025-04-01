@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yellowstone National Park</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
@@ -42,43 +42,52 @@
       </ul>
     </div>
     <header>
+      <!-- here starts the global header -->
       <section class="global-header">
+        <!-- this is the link and icon in the upper left of the header -->
         <a href="index.html" class="site-title">
           <span class="logo" role="presentation"></span>
           <span class="site-title">National Park Service</span>
         </a>
+        <!-- here is the stuff that appears on the upper right of the header -->
         <div class="global-header__right">
           <a class="search-icon" href="#park-footer">
             <svg class="icon">
-              <use xlink:href="/images/sprite.symbol.svg#search"></use>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#search"
+              ></use>
             </svg>
             <span class="search-text">Search</span>
           </a>
-          <button id="global-nav-toggle">
-            <svg class="icon">
-              <use xlink:href="/images/sprite.symbol.svg#menu"></use>
-            </svg>
-            <span class="visually-hidden">Open</span> Menu
+          <button id="global-nav-toggle" >
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/images/sprite.symbol.svg#menu"
+                ></use>
+              </svg>
+              <span class="visually-hidden">Open</span> Menu
           </button>
         </div>
         <nav class="global-nav">
-          <h2 class="global-nav__section-heading">Explore this Park</h2>
-          <ul class="global-nav__list">
-            <li>
-              <div class="global-nav__split-button">
-                <a href="#">Plan Your Visit</a>
-                <button class="global-nav__split-button__toggle">
-                  <span class="visually-hidden"
-                    >Toggle submenu for Plan Your Visit</span>
-                  <svg class="icon" role="presentation" focusable="false">
-                    <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </li>
-          </ul>
+            <h2 class="global-nav__section-heading">Explore this Park</h2>
+            <ul class="global-nav__list">
+              <li>
+                <div class="global-nav__split-button">
+                  <a href="#">Plan Your Visit</a>
+                  <button class="global-nav__split-button__toggle">
+                      <span class="visually-hidden">Toggle submenu to Plan Your Visit</span>
+                      <svg class="icon" role="presentation" focusable="false">
+                        <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                      </svg>
+                  </button>
+                </div>
+              </li>
+            </ul>
         </nav>
       </section>
+      <!-- here ends the global header -->
       <section id="park-header">
         <div class="hero-banner">
           <img src="" alt="yellowstone-geyser" />
